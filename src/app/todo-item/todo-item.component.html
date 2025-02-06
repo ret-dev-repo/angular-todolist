@@ -1,0 +1,47 @@
+<section class="hero is-info">
+    <div class="hero-body content has-text-centered">
+      <p class="title">Todo List</p>
+      <p class="subtitle">All Todo List Item</p>
+    </div>
+  </section>
+  <!--Edit the FormItems-->
+  <section class="container " >
+    <form #f="ngForm">
+    <div ngModelGroup="todoItem" #nameCtrl="ngModelGroup"> 
+      {{todoItem | json}}
+      <div class="control is-hidden">
+        <input class="input" type="number" name="id"  [ngModel]="todoItem.id">
+      </div>
+      <div class="field  is-grouped  p-3 ">
+        <label class="label">Description</label>
+        <div class="control">
+          <input class="input" type="text" name="description"  [ngModel]="todoItem.description">
+        </div>
+      </div>
+      <div class="field  is-grouped  p-3 ">
+        <label class="label">Target Date</label>
+        <div class="control">
+          <input class="input" type="date" name="targetDate" [ngModel]="todoItem.targetDate | date:'yyyy-MM-dd'">
+        </div>
+      </div>
+      <div class="field  is-grouped  m-3 ">
+        <label class="label">Completed</label>
+        <div class="control">
+          <input type="checkbox" name="completed" [ngModel]="todoItem.completed"/>           
+        </div>
+      </div>
+      <div class="field is-grouped  m-3 ">
+        <p class="control">
+          <button class="button is-primary" (click)="saveTodoItem(f.value)">
+            Submit
+          </button>
+        </p>
+        <p class="control">
+          <a class="button is-light" routerLink="/todos" routerLinkActive="active">
+            Cancel
+          </a>
+        </p>
+        </div>
+      </div>
+    </form>
+  </section>

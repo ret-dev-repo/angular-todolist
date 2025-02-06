@@ -1,0 +1,36 @@
+
+@import '../mq.scss';
+
+.header {
+  background-color: $primary; 
+  color: #fff;
+}
+
+.header a {
+  color: #000;
+}
+
+
+
+.header a:hover {
+  color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: $primary;
+  color: #000;
+}
+
+.footer strong {
+  color: #000;
+}

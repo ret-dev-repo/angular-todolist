@@ -1,0 +1,41 @@
+<!--Hero Section-->
+<section class="hero is-info">
+    <div class="hero-body content has-text-centered">
+      <p class="title">Todo List</p>
+      <p class="subtitle">All Todo List Items</p>
+      <div class="control">
+        <button class="button is-primary" routerLink="/todo" routerLinkActive="active">Add Todo Item</button>
+      </div>
+    </div>
+  </section>
+  <!--ToDo Items Table Section-->
+  <section class="section table-container">
+    <table class="table is-fullwidth" >
+      <thead>
+        <tr>
+          <th><abbr title="Index">ID</abbr></th>
+          <th>Description</th>
+          <th>Target Date</th>
+          <th>Completed</th>
+          <th>Action</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      @for (todoItem of todoItems;track todoItem.id){
+      <tbody >
+        
+          <tr>
+            <th>{{todoItem.id}}</th>
+            <td>
+              {{todoItem.description}}
+            </td>
+            <td>{{todoItem.targetDate}}</td>
+            <td>{{todoItem.completed}}</td>
+            <td><button class="button is-info" [routerLink]="['/todo',todoItem.id]" routerLinkActive="active">Update</button></td>
+            <td><button class="button is-danger" (click)="deleteTodoItem(todoItem.id)">Delete</button></td>      
+          </tr>
+        
+      </tbody>
+    }
+    </table>
+  </section>
