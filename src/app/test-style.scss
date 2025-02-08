@@ -1,0 +1,150 @@
+/**Variables.scss**/
+$primary-color: #ff0000;
+$secondary-color: #00ff00;
+$tertiary-color: #0000ff;
+h1 {
+  color: $primary-color;
+}
+/**Nested.scss**/
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+  }
+}
+/**Mixins.scss**/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin button-styles($bg-color:blue,$text-color:white){
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  @include border-radius(5px);
+}
+
+.button1 {
+  @include button-styles(black,white);
+}
+.button2 {
+  @include button-styles(red,white);
+  border-radius: 5px;
+}
+/**Functions.scss**/
+@function divide($a, $b) {
+  @return $a / $b;
+}
+@function calculate-width($value){
+  @return $value * 10.5;
+}
+div {
+  width: calculate-width(100px);
+}
+/**mq.scss**/
+$mq-small: 320px;
+$mq-medium: 768px;
+$mq-large: 1024px;
+$mq-xlarge: 1200px;
+// Small devices (landscape phones, 576px and up)
+@media (min-width: $mq-small) {
+  body {
+    background-color: red;
+   }
+  }
+// Medium devices (tablets, 768px and up)
+@media (min-width: $mq-medium) {
+  body {
+    background-color: green;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: $mq-large) {
+  body {
+    background-color: blue;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: $mq-xlarge) {
+  body {
+    background-color: yellow;
+  }
+}
+/**main.scss**/
+@import 'variables';
+@import 'nested';
+@import 'mixins';
+@import 'functions';
+@import 'mq';
+/**Partials.scss**/
+@import 'main';
+@import 'header';
+@import 'footer';
+//_header.scss, _footer.scss
+/**inheritance.scss**/
+.box1 {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+.box2 {
+  @extend .box1;
+  background-color: blue;
+  border-radius: 5px;
+}
+/**loops.scss**/
+@for $i from 1 through 3 {
+  .box#{$i} {
+    width: 100px * $i;
+  }
+}
+/**conditionals.scss**/
+$theme: dark;
+body {
+  @if $theme == 'dark' {
+    background-color: black;
+    color: white;
+  } @else {
+    background-color: white;
+    color: black;
+  }
+}
+/**operators.scss**/
+.container {
+  width: 100px + 50px;
+  height: 100px - 50px;
+  padding: 10px * 2;
+  margin: 10px / 2;
+}
+/**interpolation.scss**/
+$property: 'color';
+$color: red;
+h1 {
+  #{$property}: $color;
+}
+/**placeholders.scss**/
+%box {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+.box1 {
+  @extend %box;
+}
+.box2 {
+  @extend %box;
+  background-color: blue;
+  border-radius: 5px;
+}
