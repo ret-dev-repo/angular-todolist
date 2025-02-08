@@ -1,0 +1,30 @@
+<section class="hero is-info">
+    <div class="hero-body content has-text-centered">
+      <p class="title">Cousrses List</p>
+      <p class="subtitle">All Course List</p>
+    </div>
+  </section>
+<!--Courses-->
+<!--div class="coursedate">
+  <div *ngFor="let pair of coreCourse | keyvalue">
+    <p>{{pair.key}} : {{pair.value}}</p>                                                  
+  </div>
+  Start Date : {{startDate | date:'dd/MM/yyyy'}}
+  {{data.title | uppercase}}
+  {{courses | json}}
+</div-->
+  <section>
+ <div class="courses">
+  @for (course of courses; track course.id; let index=$index;let count=$count;let first=$first;let last=$last) {
+     <app-course-card [class.is-first]="first" [class.is-last]="last" [class.is-even]="$even" [class.is-odd]="$odd" [index]="$index" [course]="course" (courseSelected)="onCourseSelected($event)"/>
+  }
+  @empty {
+    <h1>No courses found!</h1>
+  }
+    <!--app-course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></app-course-card>
+    <app-course-card (courseSelected)="onCourseSelected($event)"  [course]="rxjsCourse"></app-course-card>
+    <app-course-card (courseSelected)="onCourseSelected($event)"  [course]="ngrxCourse"></app-course-card-->
+</div>
+  </section>
+
+ 
