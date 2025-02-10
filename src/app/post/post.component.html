@@ -1,0 +1,28 @@
+<section >
+    @for (post of userPosts; track $index) {
+    <div>
+        <div class="post">
+            <h2>{{post.user}}</h2>
+            <p>{{post.content}}</p>
+            <div class="actions">
+            <button (click)="likePost(post.id)">
+                {{likedPosts.has(post.id) ? 'Unlike' : 'Like'}}
+            </button>
+            <span>@if(likedPosts.has(post.id)){You liked this post!}</span>
+        </div>
+            <div class="comments">
+                @for(comment of post.comments; track $index) {
+                <ul>
+                    <li>
+                    {{comment}}
+                    </li>
+                </ul>
+                }
+                <input [(ngModel)]="newComment" placeholder="Add a comment" />
+                <button (click)="addComment(post.id)">Post</button>
+            </div>
+        </div>
+    </div>
+    }
+
+</section>
