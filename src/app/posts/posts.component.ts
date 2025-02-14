@@ -4,7 +4,7 @@ import { RouterLink,RouterLinkActive} from '@angular/router'
 
 @Component({
   selector: 'app-posts',
-  imports: [PostComponent,RouterLink],
+  imports: [PostComponent],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.scss'
 })

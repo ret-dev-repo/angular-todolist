@@ -1,0 +1,33 @@
+.hero {
+    background: url('../../assets/image/clouds.jpg') !important;
+    background-size: cover !important;
+    //animation: clouds 3s forwards !important;
+    //background-repeat: no-repeat !important;
+  
+    .title {
+      +mobile {
+        font-weight: bold;
+      }
+  
+      +tablet {
+        font-size: 2.5rem;
+      }
+  
+      +desktop {
+        font-size: 4rem;
+        margin-top: 2rem;
+      }
+    }
+  
+    h2 {
+      margin: 1.5rem 0 2rem 0 !important;
+    }
+  
+   
+    #learn{
+      +desktop{
+        margin-bottom: 2rem;
+      }
+    }
+  
+  }

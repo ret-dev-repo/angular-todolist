@@ -1,0 +1,22 @@
+<div class="faq">
+    <div class="container">
+      <section class="section">
+        <h1 class="title">FAQ</h1>
+        <h2 class="subtitle is-4">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero</h2>
+        <div class="columns pd">
+        @for (faq of (faqs ? faqs.slice(0,10) :[]); track $index) {
+          <div class="column is-one-third">
+           
+            <div class="card">
+              <div class="card-content">
+                <p class="title">{{ faq.title }}</p>
+                <p class="answer">{{ faq.body }}</p>
+              </div>
+            </div>
+        
+          </div>
+        }
+        </div>
+      </section>
+    </div>
+    </div>

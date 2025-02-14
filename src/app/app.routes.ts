@@ -9,6 +9,8 @@ import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostNavigationComponent } from './post-navigation/post-navigation.component';
 import { PostProfileComponent } from './post-profile/post-profile.component';
+import { HomeViewComponent } from './home-view/home-view.component';
+import { FaqViewComponent } from './faq-view/faq-view.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -22,5 +24,9 @@ export const routes: Routes = [
     {path:'post',component:PostComponent},
     {path:'posts',component:PostsComponent},
     {path:'postnav',component:PostNavigationComponent},
-    {path:'postprofile',component:PostProfileComponent}   
+    {path:'postprofile',component:PostProfileComponent},
+    {path:'home-view',component:HomeViewComponent},
+    {path:'faq-view',component:FaqViewComponent}
+
+     
 ];
